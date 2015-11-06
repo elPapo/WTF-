@@ -32,6 +32,17 @@ void ofApp::setup(){
 
     //set up the grabber
     grabber.initGrabber(640, 480);
+    
+    
+    fboAveraged.allocate(640, 480);
+    
+    
+    // shaderAverage.load("average");
+    shaderColorSep.load("color");
+    
+    
+    shaderColorSep.setUniform2f("_size", 640, 480);
+
 }
 
 //--------------------------------------------------------------
@@ -74,12 +85,41 @@ void ofApp::draw(){
 
     slitScan.setTimeDelayAndWidth(currentDelay*currentFramePerSeconds, 0);
 
+    
+    
+    fboAveraged.begin();
+    
+    
+    
+    
+    shaderColorSep.begin();
+    
+    
+    shaderColorSep.setUniform2f( "_offsetDivisor1", 0.2 + -ofGetElapsedTimef() * 0.2, 0.3+ ofGetElapsedTimef() * 0.15);
+    shaderColorSep.setUniform2f("_offsetDivisor2", 0.23+ ofGetElapsedTimef() * 0.012, 0.45+ ofGetElapsedTimef() * 0.07);
+    
+    shaderColorSep.setUniform2f("_rOffset", sin(ofGetElapsedTimef() * 0.21), ofGetElapsedTimef() * 0.18);
+    shaderColorSep.setUniform2f("_gOffset", ofGetElapsedTimef() * 0.04, -ofGetElapsedTimef() * 0.08);
+    shaderColorSep.setUniform2f("_bOffset", -ofGetElapsedTimef() * 0.003, cos(ofGetElapsedTimef() * 0.012));
+    
+    shaderColorSep.setUniform1f("_hueOffset", ofGetElapsedTimef() * 0.2);
+    shaderColorSep.setUniform1f("_time", ofGetElapsedTimef());
+    shaderColorSep.setUniform1f("_intensity", mouseX / 640.0);
+    
     slitScan.getOutputImage().draw(0, 0);
+    
+    
+    shaderColorSep.end();
+    fboAveraged.end();
+    fboAveraged.draw(0,0);
+
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    
+    shaderColorSep.load("color");
 }
 
 //--------------------------------------------------------------
@@ -89,7 +129,7 @@ void ofApp::keyReleased(int key){
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-
+mouseX = x;
 }
 
 //--------------------------------------------------------------

@@ -3,7 +3,9 @@
 #include <ctime>
 #include <math.h>
 #include "ofMain.h"
-#include "../addon/ofxSlitScan.h"
+
+#include "ofxSlitScan.h"
+
 
 class ofApp : public ofBaseApp{
 
@@ -36,4 +38,10 @@ class ofApp : public ofBaseApp{
         float target_delay;
 
         int currentFramePerSeconds;
+    
+    int mouseX;
+    ofVideoGrabber vidGrabber;
+    ofShader shaderAverage;
+    ofShader shaderColorSep;
+    ofFbo fboAveraged;
 };
