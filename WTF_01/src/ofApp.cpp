@@ -236,7 +236,19 @@ void ofApp::update(){
         slitScan.addImage(grabber);
     }
     
-    intensity = strikeCount * 0.01;
+    
+    if (state == GAME_OVER)
+    {
+        intensity = 0;
+    }
+    else if (state == WIN)
+    {
+        intensity = 0;
+    }
+    else
+    {
+        intensity = strikeCount * 0.01;
+    }
     float duration = 0.5f;
     intensity += (duration - CLAMP((ofGetElapsedTimef() - touchStartTime), 0.0, duration)) * 0.5f;
     
@@ -280,7 +292,7 @@ void ofApp::draw(){
     
     if (state == GAME_OVER)
     {
-        gameOver_image.draw(0, 0);
+        gameOver_image.draw(0, 0, 1024, 768);
     }
     else
     {
@@ -303,6 +315,11 @@ void ofApp::keyPressed(int key){
     switch(key)
     {
         case ' ':
+            
+            if (ofGetElapsedTimef() - touchStartTime > TOUCH_COOLDOWN)
+            {
+                
+            
             strikeCount++;
             
             touchStartTime = ofGetElapsedTimef();
@@ -344,15 +361,19 @@ void ofApp::keyPressed(int key){
                 strike02_sound.play();
                 break;
         }
+            }
             break;
         case OF_KEY_UP:
-            state = WIN;
-            ofSoundStopAll();
-            win_sound.play();
+            if (state != GAME_OVER)
+            {
+                state = WIN;
+                ofSoundStopAll();
+                win_sound.play();
+            }
             break;
-    }
-    
-    
+        }
+
+
     if (key == 'r')
     {
         shaderColorSep.load("color");

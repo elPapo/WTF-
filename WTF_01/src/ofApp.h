@@ -8,6 +8,7 @@
 
 #define NB_STRIKES_TO_WARNING 9
 #define NB_STRIKES_TO_GAME_OVER 18
+#define TOUCH_COOLDOWN 0.1
 
 enum StrikeState
 {
