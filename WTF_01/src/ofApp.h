@@ -49,54 +49,62 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-        ofxSlitScan slitScan;
-        ofVideoGrabber grabber;
-
-        time_t initial_time;
-        int frameCount;
-
-        float currentDelay;
-        float minDelay;
-        float maxDelay;
-
-        float former_delay;
-        float target_delay;
-
-        int currentFramePerSeconds;
-
+    
+    
+    ofxSlitScan slitScan;
+    ofVideoGrabber grabber;
+    
+    time_t initial_time;
+    int frameCount;
+    
+    float currentDelay;
+    float minDelay;
+    float maxDelay;
+    
+    float former_delay;
+    float target_delay;
+    
+    int currentFramePerSeconds;
+    
     int mouseX;
     ofVideoGrabber vidGrabber;
     ofShader shaderAverage;
     ofShader shaderColorSep;
     ofFbo fboAveraged;
-
-        //Strike and state management
-        int strikeCount;
-        StrikeState state;
-
-        //Sounds
-        int secCountToNextNote;
-        bool halfnote;
-        Notes nextNote;
-
-        ofSoundPlayer A_sound;
-        ofSoundPlayer B_sound;
-        ofSoundPlayer Cs_sound;
-        ofSoundPlayer D_sound;
-        ofSoundPlayer E_sound;
-        ofSoundPlayer Fs_sound;
-        ofSoundPlayer strike00_sound;
-        ofSoundPlayer strike01_sound;
-        ofSoundPlayer strike02_sound;
-        ofSoundPlayer heartBeatSlowLow_sound;
-        ofSoundPlayer heartBeatSlow_sound;
-        ofSoundPlayer heartBeatFast_sound;
-        ofSoundPlayer gameOver_sound;
-        ofSoundPlayer win_sound;
-
-        void loadSounds();
-        void manageMusic();
-
-        //GameOver
-        ofImage gameOver_image;
+    
+    
+    float intensity;
+    float touchStartTime;
+    
+    
+    //Strike and state management
+    int strikeCount;
+    StrikeState state;
+    
+    //Sounds
+    int secCountToNextNote;
+    bool halfnote;
+    Notes nextNote;
+    
+    ofSoundPlayer A_sound;
+    ofSoundPlayer B_sound;
+    ofSoundPlayer Cs_sound;
+    ofSoundPlayer D_sound;
+    ofSoundPlayer E_sound;
+    ofSoundPlayer Fs_sound;
+    ofSoundPlayer strike00_sound;
+    ofSoundPlayer strike01_sound;
+    ofSoundPlayer strike02_sound;
+    ofSoundPlayer heartBeatSlowLow_sound;
+    ofSoundPlayer heartBeatSlow_sound;
+    ofSoundPlayer heartBeatFast_sound;
+    ofSoundPlayer gameOver_sound;
+    ofSoundPlayer win_sound;
+    
+    void loadSounds();
+    void manageMusic();
+    
+    //GameOver
+    ofImage gameOver_image;
+    
 };
