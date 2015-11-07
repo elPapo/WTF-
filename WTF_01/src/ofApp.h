@@ -6,6 +6,31 @@
 
 #include "ofxSlitScan.h"
 
+#define NB_STRIKES_TO_WARNING 9
+#define NB_STRIKES_TO_GAME_OVER 18
+
+enum StrikeState
+{
+    INITIAL,
+    STANDARD,
+    WARNING,
+    DANGER,
+    CRITICAL,
+    FATAL,
+    GAME_OVER,
+    WIN
+};
+
+enum Notes
+{
+    NONE,
+    A,
+    D,
+    E,
+    Fs,
+    B,
+    Cs
+};
 
 class ofApp : public ofBaseApp{
 
@@ -38,10 +63,37 @@ class ofApp : public ofBaseApp{
         float target_delay;
 
         int currentFramePerSeconds;
-    
+
     int mouseX;
     ofVideoGrabber vidGrabber;
     ofShader shaderAverage;
     ofShader shaderColorSep;
     ofFbo fboAveraged;
+
+        //Strike and state management
+        int strikeCount;
+        StrikeState state;
+
+        //Sounds
+        int secCountToNextNote;
+        bool halfnote;
+        Notes nextNote;
+
+        ofSoundPlayer A_sound;
+        ofSoundPlayer B_sound;
+        ofSoundPlayer Cs_sound;
+        ofSoundPlayer D_sound;
+        ofSoundPlayer E_sound;
+        ofSoundPlayer Fs_sound;
+        ofSoundPlayer strike00_sound;
+        ofSoundPlayer strike01_sound;
+        ofSoundPlayer strike02_sound;
+        ofSoundPlayer heartBeatSlowLow_sound;
+        ofSoundPlayer heartBeatSlow_sound;
+        ofSoundPlayer heartBeatFast_sound;
+        ofSoundPlayer gameOver_sound;
+        ofSoundPlayer win_sound;
+
+        void loadSounds();
+        void manageMusic();
 };
