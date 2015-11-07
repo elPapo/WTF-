@@ -153,6 +153,7 @@ void ofApp::setup(){
     ofSetVerticalSync(false);
 
     loadSounds();
+    gameOver_image.loadImage("BlueScreenOfLoose.png");
 
     strikeCount = 0;
     state = INITIAL;

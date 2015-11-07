@@ -96,4 +96,7 @@ class ofApp : public ofBaseApp{
 
         void loadSounds();
         void manageMusic();
+
+        //GameOver
+        ofImage gameOver_image;
 };
