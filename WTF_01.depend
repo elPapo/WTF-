@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1446832039 source:/Users/v21/of_v0.8.4_osx_release/apps/myApps/WTF-/WTF_01/icon.rc
+
+1446832039 source:/Users/v21/of_v0.8.4_osx_release/apps/myApps/WTF-/WTF_01/src/main.cpp
+	"ofMain.h"
+	"ofApp.h"
+
+1446832039 /Users/v21/of_v0.8.4_osx_release/apps/myApps/WTF-/WTF_01/src/ofApp.h
+	<ctime>
+	<math.h>
+	"ofMain.h"
+	"../addon/ofxSlitScan.h"
+
+1446832037 /Users/v21/of_v0.8.4_osx_release/apps/myApps/WTF-/WTF_01/addon/ofxSlitScan.h
+
+1446832039 source:/Users/v21/of_v0.8.4_osx_release/apps/myApps/WTF-/WTF_01/src/ofApp.cpp
+	"ofApp.h"
+

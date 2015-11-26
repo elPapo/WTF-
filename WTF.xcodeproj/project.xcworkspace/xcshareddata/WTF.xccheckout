@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CE9F0430-FF87-495E-9C8B-21ACE2ECEB1D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WTF</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>335C6E85F479E38D263669BCC822D09D1C727EE1</key>
+		<string>https://github.com/obviousjim/ofxSlitScan</string>
+		<key>84A8E4B744930AD5914A1F3CF7BC424F6E643E91</key>
+		<string>https://github.com/elPapo/WTF-.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WTF.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>335C6E85F479E38D263669BCC822D09D1C727EE1</key>
+		<string>../../../addons/ofxSlitScan</string>
+		<key>84A8E4B744930AD5914A1F3CF7BC424F6E643E91</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/elPapo/WTF-.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>84A8E4B744930AD5914A1F3CF7BC424F6E643E91</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>335C6E85F479E38D263669BCC822D09D1C727EE1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxSlitScan</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>84A8E4B744930AD5914A1F3CF7BC424F6E643E91</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WTF-</string>
+		</dict>
+	</array>
+</dict>
+</plist>
